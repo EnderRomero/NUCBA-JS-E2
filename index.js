@@ -48,15 +48,15 @@ const pizzas = [
   },
 ];
 
-console.log('Parte "a" del Menú, Las Pizzas con id impar son las siguientes:');
-pizzas.forEach((element) => {
-  if (element.id % 2 !== 0) {
-    console.log(`(${element.id}) ${element.nombre}`);
+console.log('Parte "a" del Menú. Las Pizzas con id impar son las siguientes:');
+pizzas.forEach((pizza) => {
+  if (pizza.id % 2 !== 0) {
+    console.log(`(${pizza.id}) ${pizza.nombre}`);
   }
 });
 
 console.log(`
-Parte "b" del Menú`);
+Parte "b" del Menú.`);
 let hayPizzaBarata = false;
 for (let i = 0; i < pizzas.length; i++) {
   if (pizzas[i].precio < 600) {
@@ -66,13 +66,22 @@ for (let i = 0; i < pizzas.length; i++) {
 }
 
 hayPizzaBarata === true
-  ? console.log(`Sí, tenemos pizzas por menos de $600`)
-  : console.log(`Lamentablemente no tenemos pizzas por menos de $600 por ahora`);
+  ? console.log(`Sí, tenemos pizzas por menos de $600 👌`)
+  : console.log(`Lamentablemente no tenemos pizzas por menos de $600 por ahora 😢`);
 
 
 console.log(`
-Parte "c" del Menú, Nuestras Pizzas son:`);
-pizzas.forEach(element => {
-  console.log(`(${element.id}) ${element.nombre}, por $${element.precio}`)
+Parte "c" del Menú. Estas son nuestras Pizzas:`);
+pizzas.forEach(pizza => {
+  console.log(`🍕 La ${pizza.nombre}, tiene un precio de $${pizza.precio}`)
+});
+
+console.log(`
+Parte "d" del Menú. Nuestras Pizzas vienen con los siguientes ingredientes:`);
+pizzas.forEach(pizza => {
+  console.log(`🍕 La ${pizza.nombre} contiene:`)
+  pizza.ingredientes.forEach(ingrediente => {
+    console.log(`     > ${ingrediente}`)
+  });
 });
 
